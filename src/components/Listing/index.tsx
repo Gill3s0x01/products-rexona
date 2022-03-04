@@ -1,19 +1,38 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { api } from '../../services/api'
+import { IListing } from '../../interfaces'
+
 import { Container } from './styles'
 
-export const Listing: React.FC = () => {
+interface ListingProps {
+  name: string
+  category: {
+    id?: string
+    name: string
+  }
+  images: {
+    src: string
+    alt?: string
+  }
+}
+
+export const Listing = (props: ListingProps) => {
+  const [item, setItems] = useState([])
+  useEffect(() => {
+    api.get('/data').then(response => {
+      console.log(response, 'teSTET')
+      setItems(response.data)
+    })
+  }, [])
   return (
     <Container>
-      <h1>Listing</h1>
+      <h1>{props.name}</h1>
+      <p>{props.category.name}</p>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-        quidem.
+        {props.name} - {props.category.name}
       </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-        quidem.
-      </p>
-      <img src="https://picsum.photos/id/237/200/300" alt="" />
+
+      <img src={props.images.src} alt={props.images.alt} />
     </Container>
   )
 }
