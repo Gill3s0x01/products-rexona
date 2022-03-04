@@ -1,82 +1,74 @@
-import React, { useEffect, useState } from 'react'
-import { IListing } from '../../interfaces'
+import React, { useState, useEffect, useMemo } from 'react'
+import { api } from '../../services/api'
 import { Header } from '../../components/Header'
 import { Listing } from '../../components/Listing'
-import { api } from '../../services/api'
+import { uniq } from 'lodash'
+import { IListing } from '../../interfaces'
 
-const Home: React.FC = () => {
-  const [products, setProducts] = useState([])
+const Home = () => {
+  const [filteredData, setFilteredData] = useState<IListing[]>([])
+  const [listItems, setItems] = useState<IListing[]>([])
+  const [filterOptions, setFilterOptions] = useState([])
+
+  useEffect(() => {
+    let filterItems: string[] = []
+    listItems.forEach(item => {
+      if (Array.isArray(item.category)) {
+        item.category.forEach(category => filterItems.push(category.name))
+      } else {
+        filterItems.push(item.category.name)
+      }
+    })
+    setFilterOptions(uniq(filterItems.map(item => item.toLowerCase())))
+  }, [listItems])
+
   useEffect(() => {
     api.get('/data').then(response => {
-      console.log(response, 'teSTET')
-      setProducts(response.data)
+      setItems(response.data.nodes)
+      setFilteredData(response.data.nodes)
     })
   }, [])
 
-  // const name = 'Nome do Produto'
-  // const id = 'jdge73e73uine'
-  // const category = {
-  //   id: 'idAqui',
-  //   name: 'Categoria',
-  // }
-  // const images = {
-  //   src: 'https://picsum.photos/id/237/200/300',
-  //   id: 'cachorrinho',
-  // }
-  // função para listar os items e renderizar em <Listing />
-  const items = [
-    {
-      name: 'Nome do Produto',
-      id: 'jdge73e73uine',
-      category: {
-        id: 'idAqui',
-        name: 'Categoria',
-      },
-      images: {
-        src: 'https://picsum.photos/id/237/200/300',
-        id: 'cachorrinho',
-      },
-    },
-  ]
+  const filterAction = (filter: string) => {
+    setFilteredData(
+      listItems.filter(item => {
+        if (Array.isArray(item.category)) {
+          return item.category.some(
+            category => category.name.toLowerCase() === filter,
+          )
+        }
+        return item.category.name.toLowerCase() === filter
+      }),
+    )
+  }
+  const clearFilter = () => {
+    setFilteredData(listItems)
+  }
 
-  return (
-    <>
-      <Header />
-      <div className="container">
-        <div className="row">{listItems}</div>
-      </div>
-    </>
+  return useMemo(
+    () => (
+      <>
+        <Header />
+
+        <div>
+          <h1>Home</h1>
+          <button onClick={clearFilter}>Clear Filter</button>
+          {filterOptions.map((item, index) => (
+            <button key={`${index}-${item}`} onClick={() => filterAction(item)}>
+              {item}
+            </button>
+          ))}
+
+          {filteredData.map((item, index) => (
+            <Listing key={`${index}-${item.id}`} {...item} />
+          ))}
+
+          <h1>Main</h1>
+        </div>
+      </>
+    ),
+    [listItems, filterOptions, filteredData],
   )
 }
-
-// const filterItems = (items: IListing[], search: string) => {
-//   return setProducts(response.data).filter(item => {
-//     console.log(items, 'lista filtrada')
-//     return item.category.name.toLowerCase().includes(search.toLowerCase())
-//   })
-// }
-
-//   return (
-//     <>
-//       <Header />
-//       <body>
-//         <div>
-//           <input type="text" placeholder="Pesquisar" />
-//           {/* <ul>
-//             {filterItems(products, name).map(item => (
-//               <Listing key={item.id} {...item} />
-//             ))}
-//           </ul> */}
-//           <ul>
-//             <li>
-
-//             </li>
-//           </ul>
-//         </div>
-//         <Listing key={id} name={name} category={category} images={images} />
-//       </body>
-//     </>
-//   )
-// }
 
 export default Home

@@ -2,13 +2,16 @@ export interface IListing {
   name: string
   shortDescription: string
   id?: string
-  images: {
-    alt?: string
-    src: string
-  }
+  images: IImage[]
+  category: ICategory | ICategory[]
+}
 
-  category: {
-    name: string
-    id?: string
-  }
+export interface IImage {
+  alt?: string
+  src: string
+}
+
+export interface ICategory {
+  name: string
+  id?: string
 }
