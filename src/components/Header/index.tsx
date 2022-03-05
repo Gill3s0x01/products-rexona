@@ -1,4 +1,6 @@
 import React from 'react'
+import { BiSearch } from 'react-icons/bi'
+import { Logo } from './styles'
 import {
   Button,
   Container,
@@ -11,30 +13,64 @@ import {
 
 export const Header: React.FC = () => {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="white" expand="sm" fixed="top">
       <Container fluid>
-        <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+        <Navbar.Brand href="#">
+          <Logo src="./Logo_Rexona.png" alt="logo" />
+        </Navbar.Brand>
+
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
             className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
+            style={{
+              maxHeight: '100px',
+              marginLeft: '50px',
+              paddingLeft: '0px',
+            }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Link</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
+            <Nav.Link
+              href="#action1"
+              style={{
+                fontSize: '1.2rem',
+                color: '#363f5f',
+                paddingLeft: '0.5rem',
+                fontWeight: 'bold',
+              }}
+            >
+              Home
+            </Nav.Link>
+            <Nav.Link
+              href="#action2"
+              style={{
+                fontSize: '1.2rem',
+                color: '#363f5f',
+                paddingLeft: '0.5rem',
+                fontWeight: 'bold',
+              }}
+            >
+              Produtos
+            </Nav.Link>
+            <NavDropdown
+              title="Mais"
+              id="navbarScrollingDropdown"
+              style={{
+                fontSize: '1.2rem',
+                color: '#363f5f',
+                paddingLeft: '0.5rem',
+                fontWeight: 'bold',
+              }}
+            >
+              <NavDropdown.Item href="#action3">Trabelhe aqui</NavDropdown.Item>
+              <NavDropdown.Item href="#action4">Sobre nós</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action5">
-                Something else here
+                Politica de privacidade
               </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="#" disabled>
-              Link
+              Promoções
             </Nav.Link>
           </Nav>
           <Form className="d-flex">
@@ -43,8 +79,24 @@ export const Header: React.FC = () => {
               placeholder="Search"
               className="me-2"
               aria-label="Search"
+              style={{
+                borderRadius: '15px',
+                border: 'solid 1px #e6e6e6',
+                width: '200px',
+                padding: '0.5rem',
+                fontSize: '0.8rem',
+                color: '#363f5f',
+              }}
             />
-            <Button variant="outline-success">Search</Button>
+            <Button
+              variant="outline-dark"
+              style={{
+                borderRadius: '50%',
+                border: 'none',
+              }}
+            >
+              <BiSearch />
+            </Button>
           </Form>
         </Navbar.Collapse>
       </Container>

@@ -1,7 +1,7 @@
 import React from 'react'
+import { CardGroup, Button, CardImg, Col } from 'react-bootstrap'
+import { WrapName, WrapImg, Container, Card } from './styles'
 import { ICategory, IListing } from '../../interfaces'
-
-import { Container } from './styles'
 
 export const Listing = (props: IListing) => {
   const renderCategory = (category: ICategory | ICategory[]) => {
@@ -13,12 +13,20 @@ export const Listing = (props: IListing) => {
 
   return (
     <Container>
-      <h1>{props.name}</h1>
-      {renderCategory(props.category)}
-      <p>{props.name}</p>
-      {props.images.map(image => (
-        <img src={image.src} alt={image.alt} />
-      ))}
+      <Col md={16}>
+        <CardGroup>
+          <Card>
+            {props.images.map(image => (
+              <WrapImg>
+                <img src={image.src} alt={image.alt} className={'image'} />
+              </WrapImg>
+            ))}
+            <WrapName>{props.name}</WrapName>
+            <br></br>
+            {renderCategory(props.category)}
+          </Card>
+        </CardGroup>
+      </Col>
     </Container>
   )
 }
