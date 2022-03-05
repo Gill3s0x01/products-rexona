@@ -13,7 +13,7 @@ export const Listing = (props: IListing) => {
 
   return (
     <Container>
-      <Col md={16}>
+      <Col md={12}>
         <CardGroup>
           <Card>
             {props.images.map(image => (

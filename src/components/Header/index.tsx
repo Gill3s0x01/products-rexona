@@ -22,13 +22,12 @@ export const Header: React.FC = () => {
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
-            className="me-auto my-2 my-lg-0"
+            className="me-auto my-2 my-md-0"
             style={{
               maxHeight: '100px',
               marginLeft: '50px',
               paddingLeft: '0px',
             }}
-            navbarScroll
           >
             <Nav.Link
               href="#action1"

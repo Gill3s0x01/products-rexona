@@ -157,3 +157,9 @@ export const TitleProduct = styled.h1`
     font-size: 1.2rem;
   }
 `
+export const WrapContainer = styled.div`
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+`
