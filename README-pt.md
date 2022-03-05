@@ -1,7 +1,7 @@
 <p align="center">  Produtos Rexona 🚀</p>
 
 <p align="center">
-   <img src="./Public/Logo_Rexona.png" alt="logo" width="180px"/>
+   <img src="./public/Logo_Rexona.png" alt="logo" width="180px"/>
 </p>
 
 <p align="center">	
@@ -57,13 +57,13 @@
 ### Web Screenshot
 
 <div>
-   <img src="./Public/web-landing.png" width="1050px">
+   <img src="./public/desktop.png" width="1050px">
 </div>
 
 ### Mobile Screenshot
 
 <div>
-<img src="" alt="">
+  <img src="./public/mobile.png" alt="mobile"     widht="400px"/>
 </div>
 
 # :eyes: Demo Website

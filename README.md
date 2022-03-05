@@ -1,7 +1,7 @@
 <p align="center">  Rexona Products 🚀</p>
 
 <p align="center">
-   <img src="./Public/Logo_Rexona.png" alt="logo" width="180px"/>
+   <img src="./public/Logo_Rexona.png" alt="logo" width="180px"/>
 </p>
 
 <p align="center">	
@@ -52,21 +52,18 @@
   - [🤝 Contributing](#-contributing)
 - [:closed_book: License](#closed_book-license)
 
-<h2 align="left"> 📥 Layout available for download at: </h2>
-<p align="center">
-    
 </p>
 
 ### Web Screenshot
 
 <div>
-   <img src="./Public/web-landing.png" width="1050px">
+   <img src="./public/desktop.png" width="1050px">
 </div>
 
 ### Mobile Screenshot
 
 <div>
-<img src="" alt="">
+  <img src="./public/mobile.png" alt="mobile"     widht="400px"/>
 </div>
 
 # :eyes: Demo Website
