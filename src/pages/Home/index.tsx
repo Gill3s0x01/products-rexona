@@ -12,6 +12,9 @@ import {
   Container,
   WarpDiv,
   WrapText,
+  ContextButton,
+  TitleProduct,
+  ButtonClear,
 } from './styles'
 import { Banner } from '../../components/Banner'
 import { CardGroup, Col, Row } from 'react-bootstrap'
@@ -40,6 +43,7 @@ const Home = () => {
     })
   }, [])
 
+  // function filter list
   const filterAction = (filter: string) => {
     setFilteredData(
       listItems.filter(item => {
@@ -52,9 +56,15 @@ const Home = () => {
       }),
     )
   }
+  // function clear filter
   const clearFilter = () => {
     setFilteredData(listItems)
   }
+
+  // habilitar o botão filter apenas quando tiver item selecionado
+  const isFilterActive = useMemo(() => {
+    return filterOptions.length > 0
+  }, [filterOptions])
 
   return useMemo(
     () => (
@@ -84,15 +94,21 @@ const Home = () => {
             </WrapText>
           </WarpDiv>
         </div>
-        <ButtonList onClick={clearFilter}>Clear Filter</ButtonList>
-        {filterOptions.map((item, index) => (
-          <ButtonList
-            key={`${index}-${item}`}
-            onClick={() => filterAction(item)}
-          >
-            {item}
-          </ButtonList>
-        ))}
+        <TitleProduct>Selecione os tipos de desodorantes!!!</TitleProduct>
+        <ContextButton>
+          <ButtonClear onClick={clearFilter} disabled={!isFilterActive}>
+            Limpar
+          </ButtonClear>
+
+          {filterOptions.map((item, index) => (
+            <ButtonList
+              key={`${index}-${item}`}
+              onClick={() => filterAction(item)}
+            >
+              {item}
+            </ButtonList>
+          ))}
+        </ContextButton>
 
         <Container>
           <Row>

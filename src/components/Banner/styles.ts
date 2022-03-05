@@ -8,4 +8,8 @@ export const Container = styled.div`
   max-width: 100%;
   height: 30%;
   overflow: hidden;
+  @media (max-width: 820px) {
+    width: 70%;
+    height: 30%;
+  }
 `

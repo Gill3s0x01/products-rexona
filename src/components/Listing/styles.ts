@@ -7,8 +7,7 @@ export const Container = styled.div`
   justify-content: center;
   width: 300px;
   height: 600px;
-  background-color: red;
-  /* background-color: ${props => props.theme.background}; */
+  background-color: var(--background);
   color: ${props => props.theme.text};
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
@@ -20,14 +19,13 @@ export const Container = styled.div`
 export const Card = styled.div`
   display: flex;
   padding: 10px;
-  border: 1px solid ${props => props.theme.text};
+  border: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 300px;
   height: 500px;
-  background-color: red;
-  /* background-color: ${props => props.theme.background}; */
+  background-color: var(--background);
   color: ${props => props.theme.text};
   font-family: 'Roboto', sans-serif;
 `
