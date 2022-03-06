@@ -66,7 +66,7 @@
    </p>
    <img src="./public/presentation4.png" width="950px">
    <p>
-   A tela de erro foi criada, para que o usuário possa ter uma melhor experiência caso ocorra algum erro nas páginas (como uma rota que não existe)
+   A tela de erro foi criada, para que o usuário possa ter uma melhor experiência caso ocorra algum erro nas páginas (como uma rota que não existe), foi colocado uma pequena animação no icone central.
    </p>
    </br></br>
    <img src="./public/presentation5.png" width="950px">

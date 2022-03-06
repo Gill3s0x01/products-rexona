@@ -66,7 +66,7 @@
    </p>
    <img src="./public/presentation4.png" width="950px">
    <p>
-    The error screen was created, so that the user can have a better experience if there is an error on the pages (such as a route that does not exist)
+    The error screen was created, so that the user can have a better experience if there is an error on the pages (such as a route that does not exist), a small animation was placed in the central icon.
    </p>
    </br></br>
    <img src="./public/presentation5.png" width="950px">
