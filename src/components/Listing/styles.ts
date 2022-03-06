@@ -46,3 +46,71 @@ export const WrapImg = styled.div`
     height: 300px;
   }
 `
+export const ButtonModal = styled.button`
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+export const WrapModal = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+`
+
+export const TitleDetail = styled.h2`
+  font-size: 1.3rem;
+  font-weight: 600;
+  flex-direction: row;
+  justify-content: center;
+  align-items: top;
+  width: 100%;
+  padding-bottom: 20px;
+  display: flex;
+  color: var(--text-title);
+`
+
+export const WrapDescription = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`
+
+export const DescriptionDetail = styled.p`
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 300;
+`
+export const ImgDetails = styled.div`
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  @media (max-height: 560px) {
+    display: none;
+  }
+  @media (max-height: 480px) {
+    display: none;
+  }
+`
+export const ButtonClosed = styled.button`
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  position: relative;
+  right: -45%;
+  top: -10%;
+  @media (max-height: 560px) {
+    display: none;
+  }
+  @media (max-height: 480px) {
+    display: none;
+  }
+`

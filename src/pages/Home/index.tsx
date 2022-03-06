@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { api } from '../../services/api'
 import { Header } from '../../components/Header'
 import { Listing } from '../../components/Listing'
@@ -21,6 +21,7 @@ import { Banner } from '../../components/Banner'
 import { CardGroup, Col, Row } from 'react-bootstrap'
 
 const Home = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const [filteredData, setFilteredData] = useState<IListing[]>([])
   const [listItems, setItems] = useState<IListing[]>([])
   const [filterOptions, setFilterOptions] = useState([])
@@ -66,6 +67,11 @@ const Home = () => {
   const isFilterActive = useMemo(() => {
     return filterOptions.length > 0
   }, [filterOptions])
+
+  // function open modal
+  const openModal = () => {
+    setIsModalOpen(true)
+  }
 
   return useMemo(
     () => (
