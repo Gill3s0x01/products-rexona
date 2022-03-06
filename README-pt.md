@@ -56,14 +56,35 @@
 
 ### Web Screenshot
 
-<div>
-   <img src="./public/desktop.png" width="1050px">
+<div align="center">
+   <img src="./public/desktop.png" width="950px">
+   </br></br>
+   <img src="./public/presentation3.png" width="950px">
+   </br></br>
+   <p>
+   Os produtos são exibidos em cartões próximos uns dos outros de maneira responsiva e podem ser filtrados por suas categorias.
+   </p>
+   <img src="./public/presentation4.png" width="950px">
+   <p>
+   A tela de erro foi criada, para que o usuário possa ter uma melhor experiência caso ocorra algum erro nas páginas (como uma rota que não existe)
+   </p>
+   </br></br>
+   <img src="./public/presentation5.png" width="950px">
+   <p>
+    Foi criado um modal com mais detalhes do item. Clicar no cardo do item abre o modal e pode ser fechado clicando fora do modal, clicando no botão "fechar" ( X ) e também pressionando esc no teclado
+   </p>
+   
 </div>
+</br>
 
 ### Mobile Screenshot
 
-<div>
-  <img src="./public/mobile.png" alt="mobile"     widht="400px"/>
+<div align="center">
+  <img src="./public/mobile.png" alt="mobile"     widht="300px"/>
+  </br></br>
+   <img src="./public/mobile2.png" alt="mobile"     widht="300px"/>
+   </br></br>
+   <img src="./public/mobile3.png" alt="mobile"     widht="300px"/>
 </div>
 
 # :eyes: Demo Website

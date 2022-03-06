@@ -162,4 +162,5 @@ export const WrapContainer = styled.div`
   justify-content: center;
   width: 100%;
   overflow: hidden;
+  margin: 0 auto;
 `

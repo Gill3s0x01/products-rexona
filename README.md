@@ -56,14 +56,35 @@
 
 ### Web Screenshot
 
-<div>
-   <img src="./public/desktop.png" width="1050px">
+<div align="center">
+   <img src="./public/desktop.png" width="950px">
+   </br></br>
+   <img src="./public/presentation3.png" width="950px">
+   </br></br>
+   <p>
+    Products are displayed on cards next to each other in a responsive way and can be filtered through their categories.
+   </p>
+   <img src="./public/presentation4.png" width="950px">
+   <p>
+    The error screen was created, so that the user can have a better experience if there is an error on the pages (such as a route that does not exist)
+   </p>
+   </br></br>
+   <img src="./public/presentation5.png" width="950px">
+   <p>
+    A modal with more item details was created. Clicking on the item's thistle opens the modal and can be closed by clicking outside the modal, clicking on the "close" button ( X ) and also pressing esc on your keyboard
+   </p>
+   
 </div>
+</br>
 
 ### Mobile Screenshot
 
-<div>
-  <img src="./public/mobile.png" alt="mobile"     widht="400px"/>
+<div align="center">
+  <img src="./public/mobile.png" alt="mobile"     widht="300px"/>
+  </br></br>
+   <img src="./public/mobile2.png" alt="mobile"     widht="300px"/>
+   </br></br>
+   <img src="./public/mobile3.png" alt="mobile"     widht="300px"/>
 </div>
 
 # :eyes: Demo Website
